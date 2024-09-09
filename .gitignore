@@ -4,8 +4,8 @@
 /coverage
 /example/api/src/data/*.js
 /.vscode/launch.json
-/example/db/data/*/*.csv
-!/example/db/schema/*/*.csv
+/example/neo4j/data/*/*.csv
+!/example/neo4j/schema/*/*.csv
 /example/api/build
 /example/api/src/auradb/Neo4j-*-*.txt
 /example/api/src/auradb/users.js
