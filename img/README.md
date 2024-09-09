@@ -1,3 +1,0 @@
-# DISCLAIMER:
-Because GitHub sucks ass I have to ignore all photos in this directory or else github completely crashes and I'll have to restart creating a project for the +10th time tonight. YO GITHUB FIX YOUR SHIT M8! Thought y'all were engineers not grubby cash-cow fiends 
-- (ps stop integrating with CoPilot, the entire world despises it except for the elite 1% and its shareholders so basically y'all are endorsing the future technology that will opress our intellectual freedom, job security, and overall opportunities in all aspects of life... the shit is evil WAKE UP and instead work on shit that matters like the above PLEASE).
