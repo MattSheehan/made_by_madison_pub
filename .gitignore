@@ -11,6 +11,7 @@
 /example/api/src/auradb/users.js
 /example/app/build
 /example/app/package-lock.json
+/example/neo4j/data/shop/*/*.csv
 
 # misc
 /example/app/src/utils/azure/azure.config.*
