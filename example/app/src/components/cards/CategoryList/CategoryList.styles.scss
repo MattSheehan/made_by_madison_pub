@@ -1,0 +1,25 @@
+.categories-list {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+  // Child of --> List container
+  .categories-title-container {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    // Child of --> Title Container
+    .categories-title {
+      font-variant: small-caps;
+    }
+  }
+  // Child of --> List container
+  .categories-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+}

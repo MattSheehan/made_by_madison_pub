@@ -1,0 +1,3 @@
+{
+  "filter2": "(references.url=\"{{TEST_URL}}\")"
+}

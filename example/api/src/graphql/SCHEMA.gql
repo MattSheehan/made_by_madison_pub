@@ -1,0 +1,240 @@
+type User {
+  dateCreated: 09-01-2023T00:00:00Z
+  firstName: Matt
+  id: 28282828
+  lastName: Sheehan
+  email: noneYa@business.com
+  username: MattSheehan
+  userPassword: ****************
+  role: admin
+  address: 420 A 69th St.
+  city: Denver
+  state: CO
+  zip: 80000
+  postal-box: 69
+  paysCart: Cart @relationship(type: "PAYS", direction: OUT, properties: "Pays")
+  checkoutsJewlery: Jewlery @relationship(type: "CHECKOUTS", direction: OUT, properties: "Checkouts1")
+  writesComment: Comment @relationship(type: "WRITES", direction: OUT, properties: "Writes")
+  storeDelivers: Store @relationship(type: "DELIVERS", direction: IN, properties: "Delivers")
+}
+
+type Jewlery {
+  type: earing
+  itemId: 00112233
+  imageUrl: https://photos.onedrive.com/photo/{{ID}}!{{INDEX}}
+  ammount: 1
+  sizes: medium
+  material: silver, pearls
+  name: Pearl Earings
+  price: $420.69
+  creator: beany@river.com
+  userCheckouts: User @relationship(type: "CHECKOUTS", direction: IN, properties: "Checkouts1")
+  inventoryStore: Store @relationship(type: "INVENTORY", direction: OUT, properties: "Inventory1")
+  userDesigns: User @relationship(type: "DESIGNS", direction: IN, properties: "Designs1")
+}
+
+type Jewlery {
+  type: necklace
+  itemId: 12345678
+  imageUrl: https://photos.onedrive.com/photo/{{ID}}!{{INDEX}}
+  ammount: 4
+  sizes: medium
+  material: silver, gold
+  name: Chain Necklace
+  price: $500
+  description: Makes you look like a fuckin G.
+  creator: beany@river.com
+  inventoryStore: Store @relationship(type: "INVENTORY", direction: OUT, properties: "Inventory2")
+  userDesigns: User @relationship(type: "DESIGNS", direction: IN, properties: "Designs3")
+  commentReviews: Comment @relationship(type: "REVIEWS", direction: IN, properties: "Reviews")
+}
+
+type User {
+  dateCreated: 09-01-2023T00:00:00Z
+  firstName: Madison
+  id: 69100101
+  lastName: Stone
+  email: beany@river.com
+  username: beany@river.com
+  userPassword: beany23#
+  role: admin
+  designsJewlery: Jewlery @relationship(type: "DESIGNS", direction: OUT, properties: "Designs")
+  designsJewlery: Jewlery @relationship(type: "DESIGNS", direction: OUT, properties: "Designs1")
+  designsApparel: Apparel @relationship(type: "DESIGNS", direction: OUT, properties: "Designs2")
+  designsJewlery: Jewlery @relationship(type: "DESIGNS", direction: OUT, properties: "Designs3")
+  designsApparel: Apparel @relationship(type: "DESIGNS", direction: OUT, properties: "Designs4")
+  cartPays: Cart @relationship(type: "PAYS", direction: IN, properties: "Pays1")
+}
+
+type Jewlery {
+  type: earing
+  itemId: 11010010
+  imageUrl: https://photos.onedrive.com/photo/{{ID}}!{{INDEX}}
+  ammount: 4
+  sizes: medium
+  material: silver, gold
+  name: Infinity Hoops
+  price: $69.69
+  creator: beany@river.com
+  userDesigns: User @relationship(type: "DESIGNS", direction: IN, properties: "Designs")
+  inventoryStore: Store @relationship(type: "INVENTORY", direction: OUT, properties: "Inventory")
+}
+
+type Apparel {
+  type: shoes
+  itemId: 69101101
+  imageUrl: https://photos.onedrive.com/photo/{{ID}}!{{INDEX}}
+  ammount: 4
+  sizes: medium
+  material: cotton, poly
+  name: Infinity Hoops
+  price: $69.69
+  creator: beany@river.com
+  userDesigns: User @relationship(type: "DESIGNS", direction: IN, properties: "Designs2")
+  inventoryStore: Store @relationship(type: "INVENTORY", direction: OUT, properties: "Inventory3")
+}
+
+type Store {
+  type: Jewlery
+  storeId: store0001
+  name: Jewlery
+  jewleryInventory: Jewlery @relationship(type: "INVENTORY", direction: IN, properties: "Inventory1")
+  jewleryInventory: Jewlery @relationship(type: "INVENTORY", direction: IN, properties: "Inventory2")
+  jewleryInventory: Jewlery @relationship(type: "INVENTORY", direction: IN, properties: "Inventory")
+  deliversUser: User @relationship(type: "DELIVERS", direction: OUT, properties: "Delivers")
+  checkoutsCart: Cart @relationship(type: "CHECKOUTS", direction: OUT, properties: "Checkouts")
+}
+
+type Store {
+  type: Apparel
+  storeId: store0002
+  name: Apparel
+  apparelInventory: Apparel @relationship(type: "INVENTORY", direction: IN, properties: "Inventory3")
+  apparelInventory: Apparel @relationship(type: "INVENTORY", direction: IN, properties: "Inventory4")
+}
+
+type Apparel {
+  type: shirt
+  itemId: 11010010
+  imageUrl: https://photos.onedrive.com/photo/{{ID}}!{{INDEX}}
+  amount: 4
+  sizes: small, medium, large, extraLarge
+  material: cotton, poly
+  name: Infinity Hoops
+  price: $69.69
+  creator: beany@river.com
+  userDesigns: User @relationship(type: "DESIGNS", direction: IN, properties: "Designs4")
+  inventoryStore: Store @relationship(type: "INVENTORY", direction: OUT, properties: "Inventory4")
+}
+
+type Cart {
+  amount: 1
+  date: 09-02-2023T10:30:00Z
+  itemId: 00112233
+  itemName: Pearl Earings
+  price: $420.69
+  userPays: User @relationship(type: "PAYS", direction: IN, properties: "Pays")
+  storeCheckouts: Store @relationship(type: "CHECKOUTS", direction: IN, properties: "Checkouts")
+  paysUser: User @relationship(type: "PAYS", direction: OUT, properties: "Pays1")
+}
+
+type Comment {
+  username: MattSheehan
+  body: Awesome!
+  date: 09-01-2023T17:00:00Z
+  subject: Best Necklace
+  itemId: 12345678
+  rating: 5
+  reviewId: rw0001
+  userWrites: User @relationship(type: "WRITES", direction: IN, properties: "Writes")
+  reviewsJewlery: Jewlery @relationship(type: "REVIEWS", direction: OUT, properties: "Reviews")
+}
+
+interface Designs {
+  date: 09-01-2023T00:00:00Z
+}
+
+interface Designs1 {
+  date: 09-01-2023T00:00:00Z
+}
+
+interface Designs2 {
+  date: 09-01-2023T00:00:00Z
+}
+
+interface Designs3 {
+  date: 09-01-2023T00:00:00Z
+}
+
+interface Inventory {
+  ammount: 4
+}
+
+interface Inventory1 {
+  ammount: 1
+}
+
+interface Inventory2 {
+  ammount: 4
+}
+
+interface Inventory3 {
+  ammount: 4
+}
+
+interface Designs4 {
+  date: 09-01-2023T00:00:00Z
+}
+
+interface Inventory4 {
+  ammount: 4
+}
+
+interface Delivers {
+  amount: 1
+  date: 09-09-2023T10:30:00Z
+  itemId: 00112233
+  storeId: store0001
+  transactionId: tr123456789d09022023
+}
+
+interface Pays {
+  date: 09-02-2023T10:30:00Z
+  itemId: 00112233
+  storeId: store0001
+  transactionId: tr123456789d09022023
+}
+
+interface Checkouts {
+  amount: 1
+  date: 09-02-2023T10:30:00Z
+  itemId: 00112233
+}
+
+interface Pays1 {
+  date: 09-02-2023T10:30:00Z
+  itemId: 00112233
+  storeId: store0001
+  transactionId: tr123456789d09022023
+}
+
+interface Checkouts1 {
+  amount: 1
+  date: 09-02-2023T10:30:00Z
+  itemId: 00112233
+}
+
+interface Reviews {
+  author: MattSheehan
+  date: 09-01-2023T17:00:00Z
+  subject: Best Necklace
+  body: Awesome!
+  rating: 5
+}
+
+interface Writes {
+  date: 09-01-2023T17:00:00Z
+  subject: Best Necklace
+  body: Awesome!
+  rating: 5
+}

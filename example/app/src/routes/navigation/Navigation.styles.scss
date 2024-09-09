@@ -1,0 +1,29 @@
+.nav-div {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding: 0px;
+  .navigation {
+    align-items: center;
+    background-color: #f3f3f6;
+    box-shadow: 1px 1px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 1px;
+    min-width: 69px;
+    .logo-container {
+      display: block;
+      font-size: calc(14px + 1vmin);
+      padding-top: 10px;
+      h2 { margin-bottom: calc(14px + 5vmin) }
+      &:hover {
+        h2 { cursor: pointer };
+        width: auto;
+        transform: scale(1.1);
+        transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+    }
+  }
+}

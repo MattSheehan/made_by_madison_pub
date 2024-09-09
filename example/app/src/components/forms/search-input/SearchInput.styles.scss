@@ -1,0 +1,43 @@
+@mixin shrinkLabel {
+  font-size: 18px;
+  color: rgba(128,128,128,0);
+}
+.group {
+  align-items: center;
+  position: relative;
+  text-align: center;
+  .search-input {
+    background-color: rgba(255,255,255,0);
+    border: none;
+    border-radius: 8px;
+    color: rgba(0,0,0,1);
+    font-size: 18px;
+    display: block;
+    height: calc(3vh + .1416vmin);
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    width: 100%;
+    &:focus {
+      outline: none; 
+      background-color: rgba(255,255,255,1);
+      height: 60px;
+    }
+    &:focus ~ .search-input-label {@include shrinkLabel()}
+  }
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+  .search-input-label {
+    align-self: center;
+    text-align: center;
+    color: rgba(0,0,0,1);
+    font-size:calc(18px + 1vmin);
+    font-weight: normal;
+    left: 10px;
+    padding-top: calc(3.14px + 1vmin);
+    position: absolute;
+    pointer-events: none;
+    transition: 300ms ease all;
+    &.shrink {@include shrinkLabel()}
+  }
+}

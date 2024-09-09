@@ -1,0 +1,41 @@
+.header-container {
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px;
+  display: grid;
+  grid-template-columns: 10vw 69vw 9vw;
+  justify-content: space-between;
+  padding: 0px 1vw;
+  .title-container {h1 {
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    font-size: calc(18px + 2vmin);
+  }}
+  .user-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .logo-container {
+      font-size: calc(16px + 0.9vmin);
+      &:hover {
+        width: auto;
+        transform: scale(1.11);
+        transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        .logo { cursor: pointer; }
+      }
+    }
+  }
+  .search-container {
+    border: none;
+    border-radius: 8px;
+    padding-left: 3.14vmin;
+    margin-top: -25px;
+    position: relative;
+    .search-form {
+      background-color: rgba(245,245,245,0.95);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 1px 1px 3px;
+      height: 60px;
+    }
+  }
+}

@@ -1,3 +1,36 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# testing
+/coverage
+/example/api/src/data/*.js
+/.vscode/launch.json
+/example/db/data/*/*.csv
+!/example/db/schema/*/*.csv
+/example/api/build
+/example/api/src/auradb/Neo4j-*-*.txt
+/example/api/src/auradb/users.js
+/example/app/build
+/example/app/package-lock.json
+
+# misc
+/example/app/src/utils/azure/azure.config.*
+/example/app/src/utils/firebase/firebase.config.*
+/example/app/src/utils/firebase/InitFBDB.utils.*
+.DS_Store
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*~
+*.orig
+package-lock.json
+yarn.lock
+
 # Logs
 logs
 *.log
@@ -7,7 +40,7 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
+# Diagnostic reports (https://nodejs.org/example/neo4j/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
@@ -35,7 +68,7 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Compiled binary addons (https://nodejs.org/example/neo4j/addons.html)
 build/Release
 
 # Dependency directories
@@ -128,3 +161,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# dependencies
+/.pnp
+.pnp.js

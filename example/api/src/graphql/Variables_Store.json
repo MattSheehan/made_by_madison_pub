@@ -1,0 +1,3 @@
+{
+  "filter1": "(jewlery.items.name LIKE \"earing\" AND jewlery.items.name LIKE \"gold\""
+}

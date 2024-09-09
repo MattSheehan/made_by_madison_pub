@@ -1,0 +1,49 @@
+# Store
+#   >  Edge  >>  About
+fragment ABOUT_FRAGMENT on About {
+  articles {
+    ...ARTICLE_FRAGMENT
+  }
+  blog {
+    ...BLOG_FRAGMENT
+  }
+}
+#   >  Node  >>  (:About) { Articles }
+fragment ARTICLE_FRAGMENT on Articles {
+  articles(filter: $filter2) {
+    author
+    bodyHTML
+    bodyText
+    references {
+      title
+      url
+    }
+    subject
+    title
+    url
+  }
+}
+#   >  Node  >>  (:About) { Articles }
+fragment BLOG_FRAGMENT on Blog {
+  blog(sort: "datePublished") {
+    bodyHTML
+    bodyText
+    comments {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+    datePublished
+    subject
+    title
+    url
+    views
+  }
+}
+query ABOUT_QUERY($filter2: String!) {
+  about(limit: 5) {
+    ...ABOUT_FRAGMENT
+  }
+}

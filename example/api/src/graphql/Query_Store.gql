@@ -1,0 +1,511 @@
+# Store
+#   > Edges
+fragment APPAREL_CLASSES on Apparel {
+  accessories {
+    ...ACCESSORIES_CLASSES
+  }
+  bags {
+    ...BAGS_CLASSES
+  }
+  clothes {
+    ...CLOTHE_CLASSES
+  }
+  jewlery {
+    ...JEWLERY_CLASSES
+  }
+}
+#   >> Art Store
+fragment ART_CLASSES on Jewlery {
+  accessories {
+    ...ACCESSORIES_CLASSES
+  }
+  homeDecor {
+    ...HOMEDECOR_CLASSES
+  }
+  journals {
+    ...JOURNAL_CLASSES
+  }
+}
+#   > Nodes
+#   >> Apparel Store
+fragment BAGS_CLASSES on Bags {
+  backpacks {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  purses {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  wallets {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+fragment CLOTHE_CLASSES on Clothes {
+  pants {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  shirts {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+    type
+  }
+  shoes {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+fragment JEWLERY_CLASSES on Jewlery {
+  earings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  necklaces {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  pearcings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  anklets {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+# >> Art Store
+fragment ACCESSORIES_CLASSES on Jewlery {
+  cards {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  coffeeMugs {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  pearcings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  anklets {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+fragment HOMEDECOR_CLASSES on Jewlery {
+  furniture {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  paintings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+fragment JOURNALS_CLASSES on Jewlery {
+  earings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  necklaces {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  pearcings {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+  anklets {
+    dateAdded
+    dateUpdated
+    id
+    imageUrl
+    inventoryAvailable
+    inventorySize
+    jewleryType
+    material
+    name
+    price
+    reviews {
+      author
+      body
+      datePublished
+      stars
+      subject
+    }
+  }
+}
+#
+#   Q U E R I E S
+#
+query MY_GQL_QUERY($filter1: String!, $filter2: String!) {
+  store(filter: $filter1) {
+    apparel {
+      jewlery {
+        anklets(limit: 5) {
+          dateAdded
+          dateUpdated
+          id
+          imageUrl
+          inventoryAvailable
+          inventorySize
+          jewleryType
+          material
+          name
+          price
+          reviews {
+            author
+            body
+            datePublished
+            stars
+            subject
+          }
+        }
+        earings(limit: 5) {
+          dateAdded
+          dateUpdated
+          id
+          imageUrl
+          inventoryAvailable
+          inventorySize
+          jewleryType
+          material
+          name
+          price
+          reviews {
+            author
+            body
+            datePublished
+            stars
+            subject
+          }
+        }
+        necklaces(limit: 5) {
+          dateAdded
+          dateUpdated
+          id
+          imageUrl
+          inventoryAvailable
+          inventorySize
+          jewleryType
+          material
+          name
+          price
+          reviews {
+            author
+            body
+            datePublished
+            stars
+            subject
+          }
+        }
+        pearcings(limit: 5) {
+          dateAdded
+          dateUpdated
+          id
+          imageUrl
+          inventoryAvailable
+          inventorySize
+          jewleryType
+          material
+          name
+          price
+          reviews {
+            author
+            body
+            datePublished
+            stars
+            subject
+          }
+        }
+      }
+    }
+  }
+}

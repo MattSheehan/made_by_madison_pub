@@ -1,0 +1,43 @@
+.auth {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  justify-content: space-between;
+  margin: 30px auto;
+  padding: 20px 20px;
+  .auth-signIn {
+    display: flex;
+    flex-direction: column;
+    .auth-container {
+      display: block;
+      background-color: #fbfbfb;
+      border: 2px solid #efefef;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px;
+      padding: 10px;
+    }
+    .auth-container-spacer {padding-top: 40px;}
+  }
+  .auth-signUp {
+    display: block;
+    background-color: #fbfbfb;
+    border: 2px solid #efefef;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    padding: 10px;
+    .auth-link {
+      background-color: #fbfbfb;
+      border: 2px solid #dbdbdb00;
+      border-radius: 10px;
+      padding: 10px 15px;
+      &:hover {
+        cursor: pointer;
+        background-color: #efefef6f;
+        border: 2px solid #efefefaf;
+        color: #1f1fdb;
+        transform: scale(1.1);
+        transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+    }
+  }
+}

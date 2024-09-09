@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {font-family: source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;}
+a { text-decoration: none; color: #000000; }
+* { box-sizing: border-box; }
+.root-div {
+  display: grid;
+  grid-template-columns: 5vw 95vw;
+  height: 100vh;
+  padding: 0px;
+  .root-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
