@@ -30,6 +30,10 @@ yarn-error.log*
 *.orig
 package-lock.json
 yarn.lock
+/img/*.png
+*/img/*.png
+*/*/img/*.png
+*/img/*/*.png
 
 # Logs
 logs
