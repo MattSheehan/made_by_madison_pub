@@ -1,4 +1,4 @@
-# made_by_madison_PUBLIC
+# made_by_madison_pub
 
 Proof of concept for Madison Stone &amp; other interested peeps
 
@@ -10,8 +10,8 @@ $ErrorActionPreference=("SilentlyContinue");[String]$gitMsg=((
 )) ; git add . ; git commit -m "$gitMsg" ; git push ;
 [Hashtable]$rmPkg=@{Path=('./package-lock.json');Force=($true)};
 [Hashtable]$rmNode=@{Path=('./node_modules');Recurse=($true);Force=($true)}
-if ("$(Get-Location)" -NOTLIKE "*apps*made_by_madison_PUBLIC*app") {
-  Set-Location '/Users/mattsheehan/Desktop/apps/made_by_madison_PUBLIC/example/app'
+if ("$(Get-Location)" -NOTLIKE "*apps*made_by_madison_pub*app") {
+  Set-Location '/Users/mattsheehan/Desktop/apps/made_by_madison_pub/example/app'
 };try {
   Remove-Item @rmPkg ; Remove-Item @rmNode ; Start-Sleep( 10 )
 } catch { return };if ( Test-Path './package.json' ) { npm install } else {

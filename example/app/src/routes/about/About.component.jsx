@@ -11,7 +11,7 @@ const About = () => {
         id: 51177153,
         name: 'contact',
         title: 'Contact',
-        subtitle: 'Reach out to a MadeByMadison associate', 
+        subtitle: 'Reach out to a made_by_madison associate', 
         phone: '(###)###-####', 
         email: 'MSJewlerySupport@outlook.com',
         app: 'about', 
