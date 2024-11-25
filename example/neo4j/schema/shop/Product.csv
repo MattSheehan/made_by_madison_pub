@@ -1,1 +1,1 @@
-id,type,name,title,imageUrl,subtitle,price,currency,featuresID,shopID
+id,shopId,sellerId,type,name,title,subtitle,imageUrl,price,currency,color,care,quantity,sizes

@@ -23,7 +23,7 @@ export async function initDriver({NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD}) {
 export const getDriver = () => {
   // Pass environment configs as params
   return initDriver({
-    NEO4J_URI: process.env.NEO4J_URI, 
+    NEO4J_URI: process.env.NEO4J_LOCAL,
     NEO4J_USER: process.env.NEO4J_USER, 
     NEO4J_PASSWORD: process.env.NEO4J_PASSWORD
   });

@@ -1,13 +1,13 @@
 {
   "style": {
-    "font-family": "sans-serif",
-    "background-color": "#f3f9ff",
+    "font-family": "Fira Code",
+    "background-color": "#ffffff",
     "background-image": "",
     "background-size": "100%",
-    "node-color": "#FFFFFF",
-    "border-width": 5,
-    "border-color": "#0062b1",
-    "radius": 150,
+    "node-color": "#000000",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 60,
     "node-padding": 5,
     "node-margin": 2,
     "outside-position": "auto",
@@ -17,47 +17,47 @@
     "icon-size": 64,
     "caption-position": "inside",
     "caption-max-width": 200,
-    "caption-color": "#0062b1",
-    "caption-font-size": 24,
-    "caption-font-weight": "bold",
+    "caption-color": "#ffffff",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
     "label-position": "inside",
     "label-display": "pill",
-    "label-color": "#ffffff",
-    "label-background-color": "#7b64ff",
-    "label-border-color": "#aea1ff",
-    "label-border-width": 3,
-    "label-font-size": 24,
-    "label-padding": 2,
-    "label-margin": 2,
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 0,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
     "directionality": "directed",
     "detail-position": "inline",
-    "detail-orientation": "parallel",
+    "detail-orientation": "horizontal",
     "arrow-width": 5,
-    "arrow-color": "#68bc0f",
-    "margin-start": 0,
-    "margin-end": 0,
-    "margin-peer": 50,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
     "attachment-start": "normal",
     "attachment-end": "normal",
     "relationship-icon-image": "",
-    "type-color": "#369c0f",
-    "type-background-color": "#ffffff",
-    "type-border-color": "#68bc0f",
+    "type-color": "#ffffff",
+    "type-background-color": "#000000",
+    "type-border-color": "#000000",
     "type-border-width": 0,
-    "type-font-size": 24,
+    "type-font-size": 16,
     "type-padding": 5,
-    "property-position": "inside",
+    "property-position": "outside",
     "property-alignment": "colon",
-    "property-color": "#112233",
-    "property-font-size": 12,
+    "property-color": "#000000",
+    "property-font-size": 14,
     "property-font-weight": "normal"
   },
   "nodes": [
     {
-      "id": "n0",
+      "id": "n1",
       "position": {
-        "x": -6055.250360272682,
-        "y": -590.9649108155219
+        "x": 874.4851824776314,
+        "y": 485.9232495791602
       },
       "caption": "MattSheehan",
       "labels": [
@@ -78,19 +78,15 @@
         "zip": "80000",
         "postal-box": "69"
       },
-      "style": {
-        "label-background-color": "#d33115",
-        "label-border-color": "#f44e3b"
-      }
+      "style": {}
     },
     {
-      "id": "n12",
+      "id": "n2",
       "position": {
-        "x": -4112.419210502345,
-        "y": -505.6785427575613
+        "x": 1633.7081221987464,
+        "y": 146.27662875943594
       },
       "caption": "Earing",
-      "style": {},
       "labels": [
         "Jewlery"
       ],
@@ -104,16 +100,16 @@
         "name": "Pearl Earings",
         "price": "$420.69",
         "creator": "beany@river.com"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n14",
+      "id": "n3",
       "position": {
-        "x": -3882.665033033798,
-        "y": -866.6326580258451
+        "x": 2719.2329132253963,
+        "y": -147.54076100824483
       },
       "caption": "Necklace",
-      "style": {},
       "labels": [
         "Jewlery"
       ],
@@ -128,19 +124,16 @@
         "price": "$500",
         "description": "Makes you look like a fuckin G.",
         "creator": "beany@river.com"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n15",
+      "id": "n4",
       "position": {
-        "x": -3572.645672744371,
-        "y": -415.70090815972605
+        "x": 2719.2329132253963,
+        "y": 485.9232495791604
       },
       "caption": "MadisonStone",
-      "style": {
-        "label-background-color": "#d33115",
-        "label-border-color": "#f44e3b"
-      },
       "labels": [
         "User"
       ],
@@ -153,16 +146,16 @@
         "username": "beany@river.com",
         "userPassword": "beany23#",
         "role": "admin"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n16",
+      "id": "n5",
       "position": {
-        "x": -4018.30063471575,
-        "y": -98.14287934944036
+        "x": 1973.354743018471,
+        "y": 485.92324957916054
       },
       "caption": "Earing",
-      "style": {},
       "labels": [
         "Jewlery"
       ],
@@ -176,18 +169,16 @@
         "name": "Infinity Hoops",
         "price": "$69.69",
         "creator": "beany@river.com"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n17",
+      "id": "n6",
       "position": {
-        "x": -3032.8721349863986,
-        "y": -505.6785427575613
+        "x": 2998.7509613347315,
+        "y": 812.1518631503743
       },
       "caption": "Shoes",
-      "style": {
-        "label-background-color": "#7b64ff"
-      },
       "labels": [
         "Apparel"
       ],
@@ -201,19 +192,16 @@
         "name": "Infinity Hoops",
         "price": "$69.69",
         "creator": "beany@river.com"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n18",
+      "id": "n7",
       "position": {
-        "x": -5020.157504380879,
-        "y": -326.145807600334
+        "x": 1633.7081221987464,
+        "y": 485.9232495791604
       },
       "caption": "Jewlery",
-      "style": {
-        "label-background-color": "#009ce0",
-        "label-border-color": "#73d8ff"
-      },
       "labels": [
         "Store"
       ],
@@ -221,19 +209,16 @@
         "type": "Jewlery",
         "storeId": "store0001",
         "name": "Jewlery"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n19",
+      "id": "n8",
       "position": {
-        "x": -2354.600936057313,
-        "y": -460.0198235439393
+        "x": 3278.2690094440677,
+        "y": 485.92324957916054
       },
       "caption": "Apparel",
-      "style": {
-        "label-background-color": "#009ce0",
-        "label-border-color": "#73d8ff"
-      },
       "labels": [
         "Store"
       ],
@@ -241,18 +226,16 @@
         "type": "Apparel",
         "storeId": "store0002",
         "name": "Apparel"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n20",
+      "id": "n9",
       "position": {
-        "x": -3262.6263124549528,
-        "y": -866.6326580258451
+        "x": 2998.750961334732,
+        "y": 159.69463600794688
       },
       "caption": "Shirt",
-      "style": {
-        "label-background-color": "#7b64ff"
-      },
       "labels": [
         "Apparel"
       ],
@@ -266,16 +249,16 @@
         "name": "Infinity Hoops",
         "price": "$69.69",
         "creator": "beany@river.com"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n21",
+      "id": "n10",
       "position": {
-        "x": -5539.561813022578,
-        "y": 117.7039301659356
+        "x": 1633.7081221987464,
+        "y": 1001.7414566601481
       },
       "caption": "MattSheehanCart",
-      "style": {},
       "labels": [
         "Cart"
       ],
@@ -285,16 +268,16 @@
         "itemId": "00112233",
         "itemName": "Pearl Earings",
         "price": "$420.69"
-      }
+      },
+      "style": {}
     },
     {
-      "id": "n22",
+      "id": "n11",
       "position": {
-        "x": -5539.561813022578,
-        "y": -949.1057464853877
+        "x": 874.4851824776314,
+        "y": -147.54076100824483
       },
       "caption": "MattsReview",
-      "style": {},
       "labels": [
         "Comment"
       ],
@@ -306,114 +289,116 @@
         "itemId": "12345678",
         "rating": "5",
         "reviewId": "rw0001"
-      }
+      },
+      "style": {}
     }
   ],
   "relationships": [
     {
-      "id": "n13",
+      "id": "n0",
+      "fromId": "n4",
+      "toId": "n5",
       "type": "DESIGNS",
-      "style": {},
       "properties": {
         "date": "09-01-2023T00:00:00Z"
       },
-      "fromId": "n15",
-      "toId": "n16"
+      "style": {}
     },
     {
-      "id": "n14",
+      "id": "n1",
+      "fromId": "n4",
+      "toId": "n2",
       "type": "DESIGNS",
-      "style": {},
       "properties": {
         "date": "09-01-2023T00:00:00Z"
       },
-      "fromId": "n15",
-      "toId": "n12"
+      "style": {}
     },
     {
-      "id": "n16",
+      "id": "n2",
+      "fromId": "n4",
+      "toId": "n6",
       "type": "DESIGNS",
-      "style": {},
       "properties": {
         "date": "09-01-2023T00:00:00Z"
       },
-      "fromId": "n15",
-      "toId": "n17"
+      "style": {}
     },
     {
-      "id": "n17",
+      "id": "n3",
+      "fromId": "n4",
+      "toId": "n3",
       "type": "DESIGNS",
-      "style": {},
       "properties": {
         "date": "09-01-2023T00:00:00Z"
       },
-      "fromId": "n15",
-      "toId": "n14"
+      "style": {}
     },
     {
-      "id": "n21",
+      "id": "n4",
+      "fromId": "n5",
+      "toId": "n7",
       "type": "INVENTORY",
-      "style": {},
       "properties": {
         "ammount": "4"
       },
-      "fromId": "n16",
-      "toId": "n18"
+      "style": {}
     },
     {
-      "id": "n22",
+      "id": "n5",
+      "fromId": "n2",
+      "toId": "n7",
       "type": "INVENTORY",
-      "style": {},
       "properties": {
         "ammount": "1"
       },
-      "fromId": "n12",
-      "toId": "n18"
+      "style": {}
     },
     {
-      "id": "n23",
+      "id": "n6",
+      "fromId": "n3",
+      "toId": "n7",
       "type": "INVENTORY",
-      "style": {},
       "properties": {
         "ammount": "4"
       },
-      "fromId": "n14",
-      "toId": "n18"
+      "style": {}
     },
     {
-      "id": "n26",
+      "id": "n7",
+      "fromId": "n6",
+      "toId": "n8",
       "type": "INVENTORY",
-      "style": {},
       "properties": {
         "ammount": "4"
       },
-      "fromId": "n17",
-      "toId": "n19"
+      "style": {}
     },
     {
-      "id": "n27",
+      "id": "n8",
+      "fromId": "n4",
+      "toId": "n9",
       "type": "DESIGNS",
-      "style": {},
       "properties": {
         "date": "09-01-2023T00:00:00Z"
       },
-      "fromId": "n15",
-      "toId": "n20"
+      "style": {}
     },
     {
-      "id": "n28",
+      "id": "n9",
+      "fromId": "n9",
+      "toId": "n8",
       "type": "INVENTORY",
-      "style": {},
       "properties": {
         "ammount": "4"
       },
-      "fromId": "n20",
-      "toId": "n19"
+      "style": {}
     },
     {
-      "id": "n31",
+      "id": "n10",
+      "fromId": "n7",
+      "toId": "n1",
       "type": "DELIVERS",
-      "style": {},
       "properties": {
         "amount": "1",
         "date": "09-09-2023T10:30:00Z",
@@ -421,63 +406,63 @@
         "storeId": "store0001",
         "transactionId": "tr123456789d09022023"
       },
-      "fromId": "n18",
-      "toId": "n0"
+      "style": {}
     },
     {
-      "id": "n32",
+      "id": "n11",
+      "fromId": "n1",
+      "toId": "n10",
       "type": "PAYS",
-      "style": {},
       "properties": {
         "date": "09-02-2023T10:30:00Z",
         "itemId": "00112233",
         "storeId": "store0001",
         "transactionId": "tr123456789d09022023"
       },
-      "fromId": "n0",
-      "toId": "n21"
+      "style": {}
     },
     {
-      "id": "n33",
+      "id": "n12",
+      "fromId": "n7",
+      "toId": "n10",
       "type": "CHECKOUTS",
-      "style": {},
       "properties": {
         "amount": "1",
         "date": "09-02-2023T10:30:00Z",
         "itemId": "00112233"
       },
-      "fromId": "n18",
-      "toId": "n21"
+      "style": {}
     },
     {
-      "id": "n34",
+      "id": "n13",
+      "fromId": "n10",
+      "toId": "n4",
       "type": "PAYS",
-      "style": {},
       "properties": {
         "date": "09-02-2023T10:30:00Z",
         "itemId": "00112233",
         "storeId": "store0001",
         "transactionId": "tr123456789d09022023"
       },
-      "fromId": "n21",
-      "toId": "n15"
+      "style": {}
     },
     {
-      "id": "n35",
+      "id": "n14",
+      "fromId": "n1",
+      "toId": "n2",
       "type": "CHECKOUTS",
-      "style": {},
       "properties": {
         "amount": "1",
         "date": "09-02-2023T10:30:00Z",
         "itemId": "00112233"
       },
-      "fromId": "n0",
-      "toId": "n12"
+      "style": {}
     },
     {
-      "id": "n37",
+      "id": "n15",
+      "fromId": "n11",
+      "toId": "n3",
       "type": "REVIEWS",
-      "style": {},
       "properties": {
         "author": "MattSheehan",
         "date": "09-01-2023T17:00:00Z",
@@ -485,21 +470,20 @@
         "body": "Awesome!",
         "rating": "5"
       },
-      "toId": "n14",
-      "fromId": "n22"
+      "style": {}
     },
     {
-      "id": "n38",
+      "id": "n16",
+      "fromId": "n1",
+      "toId": "n11",
       "type": "WRITES",
-      "style": {},
       "properties": {
         "date": "09-01-2023T17:00:00Z",
         "subject": "Best Necklace",
         "body": "Awesome!",
         "rating": "5"
       },
-      "fromId": "n0",
-      "toId": "n22"
+      "style": {}
     }
   ]
 }
