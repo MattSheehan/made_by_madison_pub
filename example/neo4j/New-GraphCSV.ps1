@@ -11,24 +11,24 @@ if ( $authERROR ) { $configERROR = ( $true ); return } else {
   [String]$Neo4jPath = ("$env:HOME/Desktop/apps/made_by_madison_pub/example/neo4j");
   [System.Collections.ArrayList]$SchemaNodes = @();
   [Hashtable]$CSVSchema = @{
-    _about   = [System.Collections.ArrayList]@("id", "aboutContent", "blogs", "docs", "contact", "", "", "", "", "");
+    _about   = [System.Collections.ArrayList]@("id", "aboutContent", "blogs", "docs", "contact", "tbd_0", "tbd_1", "tbd_2", "tbd_3", "tbd_4");
     _auth    = [System.Collections.ArrayList]@("id", "userId", "username", "password", "email", "mobile", "loginDate", "loginState", "rbacID", "acctState");
-    _cart    = [System.Collections.ArrayList]@("id", "storeId", "productId", "buyerId", "sellerId", "price", "quantity", "dateAdded", "");
-    _home    = [System.Collections.ArrayList]@("id", "featuredContent", "promotedContent", "sales", "seasonal", "recommendations", "profileContent", "isAuth", "");
+    _cart    = [System.Collections.ArrayList]@("id", "storeId", "productId", "buyerId", "sellerId", "price", "quantity", "dateAdded", "tbd_0");
+    _home    = [System.Collections.ArrayList]@("id", "featuredContent", "promotedContent", "sales", "seasonal", "recommendations", "profileContent", "isAuth", "tbd_0");
     _product = [System.Collections.ArrayList]@("id", "shopId", "sellerId", "type", "name", "title", "subtitle", "imageUrl", "price", "currency", "color", "care", "quantity", "sizes");
     _profile = [System.Collections.ArrayList]@("id", "username", "password", "email", "homeNumber", "dateCreated", "rbacID", "companyName", "companyNumber", "acctState");
     _rbac    = [System.Collections.ArrayList]@("id", "roleID", "roleName", "accessID", "accessName", "description");
     _shop    = [System.Collections.ArrayList]@("id", "name", "title", "subtitle", "imageUrl", "category", "productIDs");
-  } ; [Int32]$node_i = ( 1 );
+  } ; [Int32]$node_i, $rel_i = ( 1 ), ( 9 );
   @('About', 'Auth', 'Cart', 'Home', 'Product', 'Profile', 'RBAC', 'Shop') | ForEach-Object {
     [Hashtable]$csvNode = @{
-      _caption = [String]("");
+      _caption = [String]("na");
       _cols    = [System.Collections.ArrayList]@();
       _guid    = [String]([System.Guid]::NewGuid().ToString());
-      _id      = [String]("n$node_i");
+      _id      = [String]("n$($node_i)");
       _label   = [String]("$_");
-      _name    = [String]("");
-      _rel     = [Hashtable]@{ type = [String](""); direction = [String](""); properties = [Hashtable]@{} };
+      _name    = [String]("na");
+      _rel     = [Hashtable]@{ id = [String]("n$( $rel_i )"); fromId = [String](""); toId = [String](""); type = [String](""); direction = [String](""); properties = [Hashtable]@{} };
       _rows    = [System.Collections.ArrayList]@()
     };
     switch -Wildcard ("$( $csvNode._label )") {
@@ -38,21 +38,21 @@ if ( $authERROR ) { $configERROR = ( $true ); return } else {
       "*Home*" { $csvNode._label = "$_"; $csvNode._cols += ($CSVSchema._home); $csvNode._name = ("home"); $csvNode._rows += @(); break }
       { $_ -LIKE "*Product*" -OR $_ -LIKE "*Apparel*" -OR $_ -LIKE "*Art*" -OR $_ -LIKE "*Decor*" -OR $_ -LIKE "*Jewlery*" } {
         $csvNode._label = "$_"; $csvNode._cols += ($CSVSchema._product); $csvNode._name = ("shop"); $csvNode._rows += @();
-        $csvNode._rel.type = ("DESIGNS"); $csvNode._rel.direction = ('IN'); $csvNode._rel.properties = @{
-          date = [String](Get-Date); userId = [String](""); storeId = [String](""); productId = [String]("");
+        $csvNode._rel.toId = ( $csvNode._id ); $csvNode._rel.type = ("DESIGNS"); $csvNode._rel.direction = ('IN'); $csvNode._rel.properties = @{
+          id = [String]([System.Guid]::NewGuid().ToString()); date = [String](Get-Date); userId = [String](""); storeId = [String](""); productId = [String]("")
         } ; break
       }
       { $_ -LIKE "*Profile*" -OR $_ -LIKE "*User*" -OR $_ -LIKE "*Teammate*" -OR $_ -LIKE "*Friend*" } {
         $csvNode._label = "$_"; $csvNode._cols += ($CSVSchema._profile); $csvNode._name = ("profile"); $csvNode._rows += @();
-        $csvNode._rel.type = ("DESIGNS"); $csvNode._rel.direction = ('OUT'); $csvNode._rel.properties = @{
-          date = [String](Get-Date); userId = [String](""); storeId = [String](""); productId = [String]("");
+        $csvNode._rel.fromId = ( $csvNode._id ); $csvNode._rel.type = ("DESIGNS"); $csvNode._rel.direction = ('OUT'); $csvNode._rel.properties = @{
+          id = [String]([System.Guid]::NewGuid().ToString()); date = [String](Get-Date); userId = [String](""); storeId = [String](""); productId = [String]("")
         } ; break
       }
       "*RBAC*" { $csvNode._label = "$_"; $csvNode._cols += ($CSVSchema._rbac); $csvNode._name = ("auth"); $csvNode._rows += @(); break }
       "*Shop*" { $csvNode._label = "$_"; $csvNode._cols += ($CSVSchema._shop); $csvNode._name = ("shop"); $csvNode._rows += @(); break }
       default { break }
-    };
-    $node_i += ( 1 ) ; $SchemaNodes += @([Hashtable]( $csvNode ))
+    } ; $node_i += ( 1 ) ; $rel_i += ( 1 );
+    $SchemaNodes += @([Hashtable]( $csvNode ))
   }
 };
 <#  MAIN  |  NOE: for $id && $date attributes, use [System.Guid]::NewGuid() && Get-Date -F yyyy:MM:ddTHH:mm:ss.ms  #>
