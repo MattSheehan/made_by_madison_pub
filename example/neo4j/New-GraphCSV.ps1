@@ -1,5 +1,6 @@
 <#  Copyright 2024 @Made_by_Madison | all rights reserved | ControlGroup: @MattSheehan  #>
-[Boolean]$authERROR, $configERROR, $seedERROR = ( $false ), ( $false ), ( $false );
+[Boolean]$authERROR, $configERROR = ( $false ), ( $false );
+<#  AUTH  |  Elevates privileges IF need be (i.e., untrusted VSCode folder, VMs, AZ-console, AZ-functions, AWS-Lambda, Apple-Automator, MS-PowerAutomate)  #>
 try { Set-Location $env:HOME/Desktop/apps/made_by_madison_pub ; Unblock-File ./example/neo4j/Create-GraphCSV.ps1 } catch {
   @('CurrentUser', 'Process') | ForEach-Object { try { Set-ExecutionPolicy 'Bypass' -Scope ( $_ ) -Force } catch { return } };
   try { Set-Location $env:HOME/Desktop/apps/made_by_madison_pub } catch { $authERROR = $true ; throw };
@@ -11,16 +12,18 @@ if ( $authERROR ) { $configERROR = ( $true ); return } else {
   [System.Collections.ArrayList]$Set_CSVSchema = @();
   [Int32]$node_i, $rel_i = ( 1 ), ( 9 );
   [Hashtable]$Get_CSVSchema = @{
-    _about   = [System.Collections.ArrayList]@("id", "aboutContent", "blogs", "docs", "contact", "tbd_0", "tbd_1", "tbd_2", "tbd_3", "tbd_4");
-    _auth    = [System.Collections.ArrayList]@("id", "userId", "username", "password", "email", "mobile", "loginDate", "rbacID", "acctState", "method1Pass", "method2Pass", "token");
-    _cart    = [System.Collections.ArrayList]@("id", "shopId", "productIDs", "instanceId", "buyerId", "sellerId", "price", "dateAdded", "isActive", "paymentMethod");
-    _home    = [System.Collections.ArrayList]@("id", "featuredContent", "promotionals", "sales", "seasonal", "recommendations", "profileContent", "isAuth");
-    _product = [System.Collections.ArrayList]@(
+    _about      = [System.Collections.ArrayList]@(
+      "id", "aboutContent", "blogs", "blogUrls", "contact", "top3Docs", "top3DocUrls", "clientStories", "sponsors", "apiConnectors", "GRCDocTitle", "GRCDocContent"
+    ); _auth    = [System.Collections.ArrayList]@(
+      "id", "userId", "username", "password", "email", "mobile", "loginDate", "rbacID", "acctState", "method1Pass", "method2Pass", "authToken", "store0Token"
+    ); _cart    = [System.Collections.ArrayList]@("id", "shopId", "productIDs", "instanceId", "buyerId", "sellerId", "price", "dateAdded", "isActive", "paymentMethod");
+    _home       = [System.Collections.ArrayList]@("id", "featuredContent", "promotionals", "sales", "seasonal", "recommendations", "profileContent", "isAuth");
+    _product    = [System.Collections.ArrayList]@(
       "id", "guid", "shopId", "sellerId", "type", "name", "title", "subtitle", "imageUrl", "price", "currency", "color", "care", "quantity", "sizes", "specials", "dateCreated"
-    );
-    _profile = [System.Collections.ArrayList]@("id", "username", "password", "email", "homeNumber", "dateSignedIn", "dateCreated", "rbacId", "companyName", "companyNumber", "acctState");
-    _rbac    = [System.Collections.ArrayList]@("id", "userId", "roleName", "accessId", "accessName", "homeNumber", "description", "acctState");
-    _shop    = [System.Collections.ArrayList]@("id", "name", "title", "subtitle", "imageUrl", "type", "category", "productIDs", "specials");
+    ); _profile = [System.Collections.ArrayList]@(
+      "id", "username", "password", "email", "homeNumber", "dateSignedIn", "dateCreated", "rbacId", "companyName", "companyNumber", "acctState", "linkedStore0", "linkedStore0Url"
+    ); _rbac    = [System.Collections.ArrayList]@("id", "userId", "roleName", "accessId", "accessName", "homeNumber", "description", "acctState");
+    _shop       = [System.Collections.ArrayList]@("id", "name", "title", "subtitle", "imageUrl", "type", "category", "productIDs", "specials");
   };
   @('About', 'Auth', 'Cart', 'Home', 'Product', 'Profile', 'RBAC', 'Shop') | ForEach-Object {
     [Hashtable]$csvNode, $csvRelationship = @{
@@ -55,7 +58,7 @@ if ( $authERROR ) { $configERROR = ( $true ); return } else {
     $Set_CSVSchema += @([Hashtable]( $csvNode )); $node_i += ( 1 ); $rel_i += ( 1 );
   }
 };
-<#  MAIN  |  NOE: for $id && $date attributes, use [System.Guid]::NewGuid() && Get-Date -F yyyy:MM:ddTHH:mm:ss.ms  #>
+<#  MAIN  |  NOTE: for $id && $date attributes, use [System.Guid]::NewGuid() && Get-Date -F yyyy:MM:ddTHH:mm:ss.ms  #>
 function New-CSVGraph([Parameter(Mandatory = $true)][Hashtable]$props) {
   @('data', 'schema') | ForEach-Object {
     [String]$_csvDir = ("$( $props._basePath )/$_");
