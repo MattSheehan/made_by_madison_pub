@@ -28,7 +28,7 @@ CREATE (n01:User { id: "n01", caption: "MadisonStone", label: "User", type: "Sel
 // Create Buyer Delivery Relationship
 (n20)-[:DELIVERS { id: "n20", fromId: "", toId: "", label: "DELIVERS", amount: 1, date: "11-09-2024T10:30:00Z", itemId: 00112233, storeId: "store0001", transactionId: "tr123456789d09022023", stage: "buyer", status: "SUCCESS" }]->(n40),
 // Create Inventory Relationship
-(n20)-[:UPDATES { id: "n32", fromId: "", toId: "", label: "UPDATES", targetAttr: "", date: "" }]->(n20Inventory)
+(n20)-[:UPDATES { id: "n32", fromId: "", toId: "", label: "UPDATES", targetAttr: "", date: "" }]->(n21),
 // Social Interaction / Review Node
 (n80:Review { id: "n80", caption: "MattsReview", label: "Review", type: "public", body: "Awesome!", date: "11-01-2024T17:00:00Z", subject: "Best Necklace", itemId: 12345678, rating: 5, userId: "n00" }),
 // Social Interaction Relationships
