@@ -1,6 +1,6 @@
-CREATE (n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "Seller", dateCreated: "11-01-2024T00:00:00Z", firstName: "Madison", id: 69100101, lastName: "Stone", email: "beany@river.com", username: "beany", userPassword: "***************", rbacId: "admin" }),
+CREATE (n42069:User { id: "n42069", caption: "made_by_madison", label: "User", type: "Orchestrator", dateCreated: "11-01-2024T00:00:00Z", firstName: "madeByMadison", id: 28282828, lastName: "", email: "madeByMadison.and.mattsFUCKINGTITS@business.com", username: "madeByMadison", userPassword: "****************", rbacId: "system", address: "420 B 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 420 }),
+(n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "Seller", dateCreated: "11-01-2024T00:00:00Z", firstName: "Madison", id: 69100101, lastName: "Stone", email: "beany@river.com", username: "beany", userPassword: "***************", rbacId: "admin", address: "420 A 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 69 }),
 (n000:User { id: "n000", caption: "MattSheehan", label: "User", type: "Buyer", dateCreated: "11-01-2024T00:00:00Z", firstName: "Matt", id: 28282828, lastName: "Sheehan", email: "noneYa@business.com", username: "noneYa", userPassword: "****************", rbacId: "admin", address: "420 A 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 69 }),
-(n42069:User { id: "n42069", caption: "made_by_madison", label: "User", type: "Orchestrator", dateCreated: "11-01-2024T00:00:00Z", firstName: "madeByMadison", id: 28282828, lastName: "", email: "madeByMadison.and.mattsFUCKINGTITS@business.com", username: "madeByMadison", userPassword: "****************", rbacId: "system", address: "420 B 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 420 }),
 (n800:User { id: "n800", caption: "UPS", label: "User", type: "Shipper", dateCreated: "11-01-2024T00:00:00Z", firstName: "Matt", id: 28282828, lastName: "Sheehan", email: "ups@business.com", username: "UPS", userPassword: "****************", rbacId: "system", address: "420 C 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 42069 }),
 (n801:User { id: "n800", caption: "USPS", label: "User", type: "Shipper", dateCreated: "11-01-2024T00:00:00Z", firstName: "Matt", id: 28282828, lastName: "Sheehan", email: "usps@business.gov", username: "USPS", userPassword: "****************", rbacId: "system", address: "420 D 69th St.", city: "Denver", state: "CO", zip: 80000, `postal-box`: 69420 }),
 // Create Store Node
@@ -16,7 +16,7 @@ CREATE (n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "S
 (n001)-[:DESIGNS { id: "n00113", fromId: "", toId: "", label: "DESIGNS", date: "11-01-2024T00:00:00Z" }]->(n13),
 (n001)-[:DESIGNS { id: "n00114", fromId: "", toId: "", label: "DESIGNS", date: "11-01-2024T00:00:00Z" }]->(n14),
 // Create Checkout Relationship for user.type = buyer
-(n000)-[:CHECKOUTS { id: "n0012", fromId: "", toId: "", label: "CHECKOUTS", amount: 1, date: "11-02-2024T10:30:00Z", itemId: 00112233 }]->(n12),
+(n000)-[:CHECKOUTS { id: "n00012", fromId: "", toId: "", label: "CHECKOUTS", amount: 1, date: "11-02-2024T10:30:00Z", itemId: 00112233 }]->(n12),
 // Create Cart Node
 (n40:Cart { id: "n40", caption: "MattSheehanCart", label: "Cart", type: "personal", amount: 1, date: "11-02-2024T10:30:00Z", itemId: 00112233, itemName: "Pearl Earings", price: "$420.69" }),
 // Create Buyer-Store Payment Relationship
@@ -44,6 +44,7 @@ CREATE (n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "S
 // Create API Connector Nodes (we can have server log updates to these nodes for our backend consumption and custom metrics... fucking suck it Shopify you hot dev yuppy son bitches)
 (n600:APIConnector { id: "n600", caption: "Azure", label: "APIConnector", type: "Automation", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: false , properties: { }}),
 (n610:APIConnector { id: "n610", caption: "GoogleFirebaseDB", label: "APIConnector", type: "DBMS", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: false , properties: { }}),
+(n611:APIConnector { id: "n611", caption: "SharePoint", label: "APIConnector", type: "DBMS", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: false , properties: { }}),
 (n620:APIConnector { id: "n620", caption: "GoogleAuth", label: "APIConnector", type: "Auth", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
 (n621:APIConnector { id: "n621", caption: "GitHubAuth", label: "APIConnector", type: "Auth", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
 (n630:APIConnector { id: "n630", caption: "Shopify", label: "APIConnector", type: "Shop", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
@@ -54,6 +55,8 @@ CREATE (n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "S
 (n640:APIConnector { id: "n640", caption: "Stripes", label: "APIConnector", type: "Payment", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
 (n680:APIConnector { id: "n680", caption: "UPS", label: "APIConnector", type: "Shipment", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
 (n681:APIConnector { id: "n681", caption: "USPS", label: "APIConnector", type: "Shipment", dateCreated: "11-01-2024T00:00:00Z", payToUse: false , global: true , properties: { }}),
+// TODO: Finish --> API POST Request to the host stores API Relationship
+(n20)-[:UPDATES { }]->{n631},
 // TODO: Finish --> AUTH + RBAC node attributes
 (n50:Auth { id: "n50", caption: "", label: "", type: "", date: "" }),
 (n51:Auth { id: "n51", caption: "", label: "", type: "", date: "" }),
@@ -66,10 +69,19 @@ CREATE (n001:User { id: "n001", caption: "MadisonStone", label: "User", type: "S
 (n58:RBAC { id: "n58", caption: "", label: "", type: "", date: "" }),
 (n59:RBAC { id: "n59", caption: "", label: "", type: "", date: "" }),
 // TODO: Create & Pipe --> SignsIn + SignsOut + SignUp + Forget relationships
-()-[:SIGNSIN { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSIN" }]->(),
-()-[:SIGNSOUT { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSOUT" }]->(),
-()-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(),
-()-[:FORGETS { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "FORGETS" }]->(),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n42069),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n000),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n001),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n800),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n800),
+(n000)-[:SIGNSIN { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSIN" }]->(n50),
+(n001)-[:SIGNSIN { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSIN" }]->(n50),
+(n000)-[:SIGNSOUT { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSOUT" }]->(n50),
+(n620)-[:SIGNSUP { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSUP" }]->(n000),
+(n000)-[:FORGETS { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "FORGETS" }]->(n50),
+(n50)-[:UPDATES { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "UPDATES" }]->(n000),
+(n50)-[:UPDATES { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "UPDATES" }]->(n610),
+(n000)-[:SIGNSIN { id: "n{fromId}{toId}", fromId: "n##", toId: "n##", label: "SIGNSIN" }]->(n50),
 // TODO: Finish --> About Nodes
 (n90:About { id: "n90", caption: "", label: "About", type: "", date: "" }),
 (n91:About { id: "n91", caption: "", label: "About", type: "", date: "" }),
